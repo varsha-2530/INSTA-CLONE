@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { Link, useNavigate } from "react-router-dom";
 import { Loader2 } from "lucide-react";
 
-const SignUp = () => {
+const Signup = () => {
   const navigate = useNavigate();
   const [input, setInput] = useState({
     username: "",
@@ -125,4 +125,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Signup;
