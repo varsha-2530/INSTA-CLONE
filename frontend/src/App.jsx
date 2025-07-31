@@ -1,31 +1,3 @@
-// import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-
-// import Login from "./components/Login";
-// import Signup from "./components/Signup";
-// import MainLayout from "./components/MainLayout";
-// import Profile from "./components/Profile";
-// import Home from "./components/Home";
-// import Message from "./components/Message";
-// import CreatePost from "./components/CreatePost";
-
-// const App = () => (
-//   <BrowserRouter>
-//     <Routes>
-//       <Route path="/" element={<Navigate to="/login" />} />
-//       <Route path="/login" element={<Login />} />
-//       <Route path="/signup" element={<Signup />} />
-//       <Route path="/home" element={<MainLayout />}>
-//         <Route index element={<Home />} />
-//        <Route path="profile" element={<Profile />} />
-//         <Route path="messages" element={<Message />} />
-//          <Route path="CreatePost" element={<CreatePost/>} />
-//       </Route>
-//     </Routes>
-//   </BrowserRouter>
-// );
-
-// export default App;
-
 import React from "react";
 import {
   BrowserRouter,
@@ -35,14 +7,14 @@ import {
   useParams,
 } from "react-router-dom";
 
-import Login from "./components/Login";
-import Signup from "./components/Signup";
-import MainLayout from "./components/MainLayout";
-import Profile from "./components/Profile";
-import Home from "./components/Home";
-import Message from "./components/Message";
-import CreatePost from "./components/CreatePost";
-import EditProfile from "./components/EditProfile";
+import Login from "./components/Login.jsx";
+import Signup from "./components/Signup.jsx";
+import MainLayout from "./components/MainLayout.jsx";
+import Profile from "./components/Profile.jsx";
+import Home from "./components/Home.jsx";
+import Message from "./components/Message.jsx";
+import CreatePost from "./components/CreatePost.jsx";
+import EditProfile from "./components/EditProfile.jsx";
 
 
 
