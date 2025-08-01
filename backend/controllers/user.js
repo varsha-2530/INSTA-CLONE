@@ -96,10 +96,17 @@ export const login = async (req, res) => {
 
     const populatedPosts = await Post.find({ _id: { $in: dbUser.posts } });
 
+    // res.cookie("token", token, {
+    //   httpOnly: true,
+    //   secure: true,
+    //   sameSite: "strict",
+    //   maxAge: 24 * 60 * 60 * 1000,
+    // });
+
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true,
-      sameSite: "strict",
+      secure: true, // ✅ because Render uses HTTPS
+      sameSite: "None", // ✅ allow cookie across domains
       maxAge: 24 * 60 * 60 * 1000,
     });
 
@@ -138,7 +145,11 @@ export const getProfile = async (req, res) => {
   const userId = req.params.id;
 
   // ✅ Validate ObjectId
-  if (!userId || userId === "undefined" || !mongoose.Types.ObjectId.isValid(userId)) {
+  if (
+    !userId ||
+    userId === "undefined" ||
+    !mongoose.Types.ObjectId.isValid(userId)
+  ) {
     return res.status(400).json({ errorMsg: "Invalid or missing user ID." });
   }
 
@@ -159,13 +170,10 @@ export const getProfile = async (req, res) => {
   }
 };
 
-
-
-
 // EDIT Profile Controller
 export const editProfile = (req, res) => {
   const userId = req.id;
-  const { username, email, bio, gender } = req.body; 
+  const { username, email, bio, gender } = req.body;
   //console.log("Incoming body =>", req.body);
   const updateData = {
     username,
@@ -173,7 +181,6 @@ export const editProfile = (req, res) => {
     bio,
     gender,
   };
-  
 
   if (req.file) {
     cloudinary.uploader
@@ -191,7 +198,6 @@ export const editProfile = (req, res) => {
               message: "Profile updated with image",
               user: updatedUser,
             });
-            
           })
           .catch((err) => {
             console.error("User update error:", err.message);
@@ -208,7 +214,6 @@ export const editProfile = (req, res) => {
           message: "Profile updated without image",
           user: updatedUser,
         });
-       
       })
       .catch((err) => {
         console.error("User update error:", err.message);
@@ -216,7 +221,6 @@ export const editProfile = (req, res) => {
       });
   }
 };
-
 
 //........................................................................
 
@@ -246,7 +250,6 @@ export const getSuggestedUsers = async (req, res) => {
     return res.status(500).json({ errorMsg: "Something went wrong." });
   }
 };
-
 
 //..............................................................
 export const deleteUser = (req, res) => {
