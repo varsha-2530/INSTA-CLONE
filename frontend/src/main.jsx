@@ -13,6 +13,7 @@ let persistor = persistStore(store)
 
 axios.defaults.baseURL = "https://insta-clone-1-qxmq.onrender.com";
 axios.defaults.withCredentials = true;
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>

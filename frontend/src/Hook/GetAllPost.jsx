@@ -28,7 +28,7 @@
 
 
 import { useEffect } from "react";
-import axios from "@/axiosConfig"; // ✅ Your configured axios
+import axios from "axios"; // ✅ Your configured axios
 import { useDispatch } from "react-redux";
 import { setPosts } from "@/Redux/postSlice";
 
