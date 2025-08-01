@@ -241,7 +241,7 @@ const Post = ({ post }) => {
               onClick={async () => {
                 try {
                   const res = await axios.post(
-                    `http://localhost:2530/api/post/addComments/${post?._id}`,
+                    `/api/post/addComments/${post?._id}`,
                     { text },
                     {
                       headers: { "Content-Type": "application/json" },
