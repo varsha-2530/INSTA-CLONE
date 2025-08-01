@@ -80,7 +80,7 @@ const LeftSideBar = () => {
     <div className="w-[250px] border-r border-gray-800 p-3 mt-2 space-y-9 min-h-screen bg-black text-white">
       {/* Logo */}
       <h1 className="text-4xl font-bold bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-transparent bg-clip-text font-[cursive] text-center">
-        Instagram
+        ChatTALK
       </h1>
 
       {/* Sidebar Navigation */}

@@ -61,7 +61,7 @@ const Signup = () => {
         {/* Main Signup Card */}
         <div className="border border-gray-700 bg-gray-900 p-6 sm:p-8 rounded-lg w-full shadow-md">
           <h1 className="text-center text-4xl sm:text-5xl font-bold font-logo mb-4 sm:mb-5 my-2 text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600">
-            Instagram
+            ChatTALK
           </h1>
 
           <p className="text-center text-gray-300 text-sm mb-5 font-medium">

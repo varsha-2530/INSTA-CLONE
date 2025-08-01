@@ -73,7 +73,7 @@ const Login = () => {
             {/* Instagram Logo */}
             <div className="border border-[#000000] bg-[#000000] p-6 rounded-md">
               <h1 className="text-5xl font-logo text-center mb-6 text-white tracking-wider">
-                Instagram
+                ChatTALK
               </h1>
 
               <form
