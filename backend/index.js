@@ -21,6 +21,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+// app.use(cors({
+//   origin: ['https://insta-clone-1-frontend-kn9c.onrender.com' 
+//   ],
+//   credentials: true
+// }));
+
 
 app.use(cors({
   origin: ['http://localhost:5173', 'http://localhost:5174',
@@ -42,11 +48,13 @@ app.get("/api/health", (req, res) => {
 
 app.use('/api/user', userRoutes);
 app.use('/api/post', postRoutes);
-app.use('/api/message', messageRoutes)
+app.use('/api/message', messageRoutes);
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running at: http://localhost:${PORT}`);
 });
+
+
 
 
 
