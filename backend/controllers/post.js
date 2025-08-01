@@ -173,19 +173,10 @@ export const deletePost = async (req, res) => {
         .json({ errorMsg: "You are not allowed to delete this post" });
     }
 
-    // (Optional) image cleanup — agar Cloudinary use kar rahe ho aur public_id store karte ho
-    // if (post.image?.public_id) {
-    //   await cloudinary.uploader.destroy(post.image.public_id);
-    // }
-
-    // 1) Delete all comments belonging to this post
+ 
     await Comment.deleteMany({ post: postId });
 
-    // 2) (Optional) Agar users ke document me likedPosts/savedPosts rakhte ho to wahan se bhi pull:
-    // await User.updateMany({ likedPosts: postId }, { $pull: { likedPosts: postId } });
-    // await User.updateMany({ savedPosts: postId }, { $pull: { savedPosts: postId } });
-
-    // 3) Finally delete the post itself
+   
     await Post.deleteOne({ _id: postId });
 
     return res
@@ -196,34 +187,3 @@ export const deletePost = async (req, res) => {
     return res.status(500).json({ errorMsg: "Something went wrong" });
   }
 };
-
-// export const deletePost = (req, res) => {
-//   const postId = req.params.id;
-//   const userId = req.id;
-//   console.log("User ID from token:", userId);
-//   console.log("Post ID from params:", postId);
-
-//   Post.findById(postId)
-//     .then((post) => {
-//       console.log("Fetched post:", post);
-
-//       if (!post) {
-//         return res.status(404).json({ errorMsg: "Post not found" });
-//       }
-
-//       if (post.author.toString() !== userId) {
-//         return res
-//           .status(403)
-//           .json({ errorMsg: "You are not allowed to delete this post" });
-//       }
-
-//       return Post.findByIdAndDelete(postId);
-//     })
-//     .then(() => {
-//       res.status(200).json({ message: "Post deleted successfully" });
-//     })
-//     .catch((err) => {
-//       console.error("Error deleting post:", err);
-//       res.status(500).json({ errorMsg: "Something went wrong" });
-//     });
-// };

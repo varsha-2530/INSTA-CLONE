@@ -1,22 +1,3 @@
-// import React from "react";
-// import { Outlet } from "react-router-dom";
-// import LeftSideBar from "../components/LeftSideBar";
-// import MainFeed from "./MainFeed";
-
-// const MainLayout = () => {
-//   return (
-//     <div className="flex bg-black text-white min-h-screen">
-//       <LeftSideBar />
-//       <main className="flex-1 p-5">
-//         <Outlet />
-//       </main>
-//     </div>
-//   );
-// };
-
-// export default MainLayout;
-
-
 import React from "react";
 import { Outlet } from "react-router-dom";
 import LeftSideBar from "../components/LeftSideBar";
