@@ -7,8 +7,12 @@ import { Provider } from "react-redux";
 import store from "./Redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 import persistStore from "redux-persist/es/persistStore";
+import axios from "axios";
 
 let persistor = persistStore(store)
+
+axios.defaults.baseURL = "https://insta-clone-1-qxmq.onrender.com";
+axios.defaults.withCredentials = true;
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
