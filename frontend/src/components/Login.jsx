@@ -35,7 +35,7 @@ const Login = () => {
     try {
       setLoading(true);
       const res = await axios.post(
-        "http://localhost:2530/api/User/login",
+        "/api/User/login",
         input,
         {
           headers: { "Content-Type": "application/json" },
