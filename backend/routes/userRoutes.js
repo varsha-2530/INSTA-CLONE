@@ -11,7 +11,7 @@ router.post('/login', login)
 router.get('/logout', logout)
 router.get('/getProfile/:id',verifyToken, getProfile)
 router.get("/getSuggestedUsers", verifyToken, getSuggestedUsers)
-router.put("/editprofile/:id", verifyToken, upload.single("profilePicture"), editProfile)
+router.put("/editprofile/profile", verifyToken, upload.single("profilePicture"), editProfile)
 
 router.put("/toggleFollow/:id", verifyToken, toggleFollow);
 router.get("/getfollowers/:id", getFollowers)

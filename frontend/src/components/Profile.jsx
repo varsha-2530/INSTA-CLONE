@@ -207,8 +207,6 @@
 
 // export default Profile;
 
-
-
 import React, { useEffect, useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
@@ -221,7 +219,11 @@ const Profile = () => {
   const { id } = useParams();
 
   // Redux state: auth me user (self) aur userProfile (other) aa raha hai
-  const { user, userProfile, loading: authLoading } = useSelector((s) => s.auth || {});
+  const {
+    user,
+    userProfile,
+    loading: authLoading,
+  } = useSelector((s) => s.auth || {});
 
   // ✅ Kiski profile dekh rahe ho (current ya other)?
   const isOwnProfile = useMemo(() => !id || id === user?._id, [id, user?._id]);
@@ -323,19 +325,13 @@ const Profile = () => {
           )}
 
           {/* Bio */}
-          <p className="text-sm text-gray-500 mt-2">
+          <p className="text-sm text-gray-500 mt-2 whitespace-pre-line">
             {displayUser?.bio || "No bio yet."}
           </p>
 
           {/* Static info lines */}
           <span className="text-sm text-gray-500 mt-2 block">
             {displayUser?.gender || "Gender"}
-          </span>
-          <span className="text-sm text-gray-500 mt-2 block">
-            {displayUser?.location || "No location yet."}
-          </span>
-          <span className="text-sm text-gray-500 mt-2 block">
-            {displayUser?.website || "No website yet."}
           </span>
 
           {/* Counts + CTA Buttons */}

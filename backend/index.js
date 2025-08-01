@@ -40,7 +40,7 @@ app.get("/api/health", (req, res) => {
 });
 
 
-app.use('/api/User', userRoutes);
+app.use('/api/user', userRoutes);
 app.use('/api/post', postRoutes);
 app.use('/api/message', messageRoutes)
 

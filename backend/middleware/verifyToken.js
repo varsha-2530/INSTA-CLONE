@@ -17,12 +17,16 @@ export const verifyToken = (req, res, next) => {
           errorMsg: "Invalid or expired token."
         });
       }
-
+  //console.log("Decoded user ID from token:", decoded.id);
       req.id = decoded.id; 
       next();
+      
     });
   } catch (err) {
     console.log("Token verify error:", err);
     res.status(500).json({ errorMsg: "Something went wrong." });
   }
 };
+
+
+export default verifyToken;
