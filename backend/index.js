@@ -21,19 +21,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// app.use(cors({
-//   origin: ['https://insta-clone-1-frontend-kn9c.onrender.com' 
-//   ],
-//   credentials: true
-// }));
 
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:5174',
-    'https://tumhara-frontend-link.onrender.com' 
-  ],
-  credentials: true
+  origin: "https://insta-clone-1-frontend-88p4.onrender.com",
+  credentials: true,
 }));
+
+// app.use(cors({
+//   origin: ['http://localhost:5173', 'http://localhost:5174',
+//     'https://tumhara-frontend-link.onrender.com' 
+//   ],
+//   credentials: true
+// }));
 
 
 mongoose.connect(DATABASE_URI)
