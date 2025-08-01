@@ -46,6 +46,7 @@ const Signup = () => {
           email: "",
           password: "",
         });
+           navigate("/login");
       }
     } catch (error) {
       handleError(error);
