@@ -10,7 +10,7 @@ const GetSuggestedUser = () => {
     const fetchSuggestedUsers = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:2530/api/user/getSuggestedUsers",
+          "/api/user/getSuggestedUsers",
           { withCredentials: true }
         );
 

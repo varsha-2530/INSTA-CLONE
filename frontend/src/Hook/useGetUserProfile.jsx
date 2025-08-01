@@ -13,7 +13,7 @@ export default function useGetUserProfile(userId) {
     const fetchUserProfile = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:2530/api/user/getProfile/${userId}`,
+          `/api/user/getProfile/${userId}`,
           { withCredentials: true }
         );
         if (res.data.user) {

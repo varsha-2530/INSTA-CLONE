@@ -58,7 +58,7 @@ const LeftSideBar = () => {
 
   const logOutHandler = async () => {
     try {
-      const res = await axios.get("http://localhost:2530/api/User/logout", {
+      const res = await axios.get("/api/User/logout", {
         headers: { "Content-Type": "application/json" },
         withCredentials: true,
       });

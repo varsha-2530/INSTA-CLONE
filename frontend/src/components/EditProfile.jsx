@@ -70,7 +70,7 @@ const EditProfile = () => {
       setLoading(true);
 
       const res = await axios.put(
-        `http://localhost:2530/api/user/editprofile/profile`,
+        `/api/user/editprofile/profile`,
         formData,
         {
           headers: {

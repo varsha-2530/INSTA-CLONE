@@ -84,7 +84,7 @@ const CommentDialog = ({ open, setOpen }) => {
 
     try {
       const res = await axios.post(
-        `http://localhost:2530/api/post/addComments/${selectedPost?._id}`,
+        `/api/post/addComments/${selectedPost?._id}`,
         { text },
         {
           headers: { "Content-Type": "application/json" },

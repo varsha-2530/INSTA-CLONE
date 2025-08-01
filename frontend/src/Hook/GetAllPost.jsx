@@ -8,7 +8,7 @@ const GetAllPost = () => {
   useEffect(() => {
     const fetchAllData = async () => {
       try {
-        const res = await axios.get("http://localhost:2530/api/post/getAllPost", {
+        const res = await axios.get("/api/post/getAllPost", {
           withCredentials: true,
         });
         if (res.data.message) {

@@ -58,7 +58,7 @@ const Post = ({ post }) => {
   const likesHandler = async (postId) => {
     try {
       const res = await axios.put(
-        `http://localhost:2530/api/post/toggleLike/${postId}`,
+        `/api/post/toggleLike/${postId}`,
         {},
         { withCredentials: true }
       );
@@ -80,7 +80,7 @@ const Post = ({ post }) => {
   const deleteHandler = async () => {
     try {
       const res = await axios.delete(
-        `http://localhost:2530/api/post/deletePost/${post?._id}`,
+        `/api/post/deletePost/${post?._id}`,
         { withCredentials: true }
       );
 

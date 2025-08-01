@@ -55,7 +55,7 @@ const CreatePost = () => {
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:2530/api/post/addPost",
+        "/api/post/addPost",
         formData,
         {
           headers: {
