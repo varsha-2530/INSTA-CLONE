@@ -38,7 +38,7 @@ const CommentDialog = ({ open, setOpen }) => {
       if (!selectedPost?._id) return;
       try {
         const res = await axios.get(
-          `http://localhost:2530/api/post/getAllComments/${selectedPost._id}`,
+          `/api/post/getAllComments/${selectedPost._id}`,
           { withCredentials: true }
         );
         setComments(res.data.comments || []);
@@ -56,7 +56,7 @@ const CommentDialog = ({ open, setOpen }) => {
   const handleDeleteComment = async (commentId) => {
     try {
       await axios.delete(
-        `http://localhost:2530/api/post/deleteComment/${commentId}`,
+        `/api/post/deleteComment/${commentId}`,
         { withCredentials: true }
       );
 
