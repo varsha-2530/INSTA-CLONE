@@ -10,7 +10,7 @@ const RightSideBar = () => {
   const initials = (user?.username && user.username.slice(0, 2).toUpperCase()) || "CN";
 
   return (
-    <div className="w-fit my-8">
+    <div className="w-fit my-8 mt-1 ">
       <div className="flex items-center gap-5 rounded-lg p-2 mr-2">
         {/* ✅ current user profile by id */}
         <Link to={`profile/${user?._id}`}>
