@@ -34,9 +34,6 @@ const LeftSideBar = () => {
   const SidebarItems = [
     { icon: <Home />, text: "Home", path: "/home" },
     { icon: <Search />, text: "Search", path: "/home/search" },
-    { icon: <TrendingUp />, text: "Trending", path: "/home/trending" },
-    { icon: <MessageCircle />, text: "Messages", path: "/home/messages" },
-    { icon: <Heart />, text: "Notification", path: "/home/notifications" },
     { icon: <PlusSquare />, text: "CreatePost", path: "/home/CreatePost" },
     {
       icon: <User />,
@@ -49,9 +46,8 @@ const LeftSideBar = () => {
   const toastMap = {
     Home: "🏠 Welcome Home!",
     Search: "🔍 Time to search!",
-    Trending: "📈 You're trending now!",
-    Messages: "💬 Checking messages...",
-    Notification: "❤️ Love is in the air!",
+    
+   
     CreatePost: "➕ Let's post something new!",
     Profile: "👤 Viewing profile",
   };

@@ -290,3 +290,23 @@ export const deleteUser = (req, res) => {
       res.status(500).json({ errorMsg: "Something went wrong" });
     });
 };
+
+
+export const searchUsers = async (req, res) => {
+  const currentUserId = new mongoose.Types.ObjectId(req.id); // from verifyToken
+  const { query } = req.query;
+
+  try {
+    const regex = new RegExp(query, "i"); // case-insensitive
+
+    const users = await User.find({
+      _id: { $ne: currentUserId },
+      $or: [{ username: regex }, { name: regex }],
+    }).select("-password");
+
+    res.status(200).json({ users });
+  } catch (error) {
+    console.error("searchUsers error:", error);
+    res.status(500).json({ error: "Search failed" });
+  }
+};

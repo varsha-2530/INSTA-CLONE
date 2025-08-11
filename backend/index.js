@@ -1,8 +1,8 @@
 import dotenv from "dotenv";
 dotenv.config();
-
 // Import dependencies
 import express from "express";
+
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import mongoose from "mongoose";
@@ -13,8 +13,8 @@ import postRoutes from './routes/postRoutes.js'
 import messageRoutes from './routes/messageRoutes.js'
 import { DATABASE_URI, PORT } from "./keys.js";
 
-
 const app = express();
+
 
 
 app.use(express.json());
@@ -50,11 +50,10 @@ app.use('/api/user', userRoutes);
 app.use('/api/post', postRoutes);
 app.use('/api/message', messageRoutes);
 
+
 app.listen(PORT, () => {
   console.log(`🚀 Server running at: http://localhost:${PORT}`);
 });
-
-
 
 
 

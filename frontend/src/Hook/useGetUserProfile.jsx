@@ -8,8 +8,7 @@ export default function useGetUserProfile(userId) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!userId) return; // current user ke liye skip karo (wo auth.user se aayega)
-
+    if (!userId) return; 
     const fetchUserProfile = async () => {
       try {
         const res = await axios.get(
@@ -31,3 +30,4 @@ export default function useGetUserProfile(userId) {
     fetchUserProfile();
   }, [userId, dispatch]);
 }
+

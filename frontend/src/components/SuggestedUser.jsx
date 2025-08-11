@@ -6,6 +6,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 const SuggestedUser = () => {
   const suggestedUser = useSelector((s) => s?.auth?.suggestedUser) ?? [];
 
+ 
+
   return (
     <div className="p-2">
       <div className="flex items-center justify-between text-sm mt-6 mb-3">
@@ -55,7 +57,10 @@ const SuggestedUser = () => {
                 </div>
               </Link>
 
-              <button className="text-xs font-semibold text-sky-500 hover:text-sky-400">
+              <button
+                className="text-xs font-semibold text-sky-500 hover:text-sky-400"
+                
+              >
                 Follow
               </button>
             </div>

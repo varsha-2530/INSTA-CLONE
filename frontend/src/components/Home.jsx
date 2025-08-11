@@ -32,11 +32,15 @@ import GetAllPost from "@/Hook/GetAllPost";
 import GetSuggestedUser from "@/Hook/GetSuggestedUser";
 
 const Home = () => {
-  GetAllPost();
-  GetSuggestedUser();
+  // GetAllPost();
+  // GetSuggestedUser();
 
   return (
     <div className="flex w-full min-h-screen bg-black text-white">
+     
+       <GetAllPost />
+      <GetSuggestedUser />
+      
       {/* Main Feed */}
       <div
         className="
